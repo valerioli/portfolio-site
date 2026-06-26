@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Valerio Li — Marketing × Luxury × Web3 × AI</title>
-<meta name="description" content="Valerio Li — CMO at AInfinity. 15+ years of marketing & growth leadership across luxury retail, digital, and Web3. GM at YOOX NET-A-PORTER, Head of Digital at LVMH/Loewe, CMO at Infini.">
+<meta name="description" content="Valerio Li — CMO at AInfinity. 15+ years of marketing & growth leadership across luxury retail, digital, and Web3. GM at YOOX NET-A-PORTER, Head of Digital at LVMH/Loewe, CMO at Infini. Sci-fi author & AI educator.">
 <meta property="og:title" content="Valerio Li — Marketing × Luxury × Web3 × AI">
-<meta property="og:description" content="CMO at AInfinity. 15+ years scaling brands across luxury, Web3, and AI — APAC & LATAM.">
+<meta property="og:description" content="CMO at AInfinity. 15+ years scaling brands across luxury, Web3, and AI — APAC & LATAM. Sci-fi author & AI educator.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://valerioli.vercel.app/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://valerioli.vercel.app/headshot.jpg">
+<link rel="icon" href="headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -29,25 +33,25 @@
 
   /* nav */
   .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:2px solid var(--ink)}
-  .topin{max-width:1200px;margin:0 auto;padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .topin{max-width:1200px;margin:0 auto;padding:16px 30px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .logo{font-weight:700;font-size:15px;letter-spacing:1px}
   .logo .d{color:var(--red)}
-  .nav{display:flex;gap:24px;font-size:12px;letter-spacing:1px}
+  .nav{display:flex;gap:20px;font-size:12px;letter-spacing:1px;flex-wrap:wrap}
   .nav a{color:var(--ink2);position:relative;padding:3px 0}
   .nav a:hover{color:var(--ink)}
   .nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:7px;background:var(--lime);z-index:-1;transition:.2s}
   .nav a:hover::after{width:100%}
-  @media(max-width:720px){.nav{display:none}}
+  @media(max-width:560px){.nav{gap:12px;font-size:11px;width:100%}}
 
   /* hero */
   .hero{padding:70px 0 40px}
   .namerow{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
-  h1.name{font-family:var(--serif);font-weight:900;font-size:clamp(64px,13vw,168px);line-height:.82;letter-spacing:-.03em}
+  h1.name{font-family:var(--serif);font-weight:900;font-size:clamp(60px,13vw,168px);line-height:.82;letter-spacing:-.03em}
   .avatar{width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid var(--ink);flex:none;box-shadow:5px 5px 0 var(--lime)}
   .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-  .socials{display:flex;gap:8px}
-  .soc{width:38px;height:38px;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--paper);transition:.15s}
-  .soc:hover{background:var(--ink);color:var(--paper)}
+  .socials{display:flex;gap:8px;flex-wrap:wrap}
+  .soc{width:38px;height:38px;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:700;background:var(--paper);transition:.15s}
+  .soc:hover{background:var(--lime)}
   .role{margin-top:18px;font-size:13px;letter-spacing:2px;color:var(--red);font-weight:700;text-transform:uppercase}
 
   .bio{margin-top:26px;max-width:900px;border-left:5px solid var(--lime);padding-left:22px}
@@ -88,6 +92,14 @@
   .earlier .lab{color:var(--mut);letter-spacing:1px;width:100%;font-size:11px;margin-bottom:4px}
   .earlier b{color:var(--ink)}
 
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gphoto{position:relative;aspect-ratio:1;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--ink)}
+  .gphoto img{width:100%;height:100%;object-fit:cover;transition:.4s;display:block}
+  .gphoto:hover img{transform:scale(1.07)}
+  .gphoto .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font-size:10.5px;letter-spacing:1px;padding:22px 10px 9px;text-transform:uppercase;font-weight:600}
+  @media(max-width:680px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
   /* expertise chips */
   .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
   .chip{border:1.5px solid var(--ink);border-radius:30px;padding:7px 14px;font-size:12px;letter-spacing:.3px;background:var(--paper)}
@@ -109,15 +121,30 @@
   .cell .arr{font-size:16px}
 
   /* writings */
-  .write{display:grid;grid-template-columns:120px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-top:1px solid var(--line);transition:.15s}
+  .write{display:grid;grid-template-columns:140px 1fr auto;gap:20px;align-items:center;padding:18px 0;border-top:1px solid var(--line);transition:.15s}
   .write:first-of-type{border-top:2px solid var(--ink)}
   .write:last-of-type{border-bottom:2px solid var(--ink)}
   .write:hover{background:rgba(205,242,74,.18)}
   .write .cat{font-size:11px;letter-spacing:1px;font-weight:700}
   .write .cat .dt{display:block;color:var(--mut);font-weight:400;margin-top:4px}
   .write .wt{font-family:var(--serif);font-weight:700;font-size:clamp(16px,2.1vw,22px);line-height:1.15}
-  .write .rt{font-size:11px;color:var(--mut);white-space:nowrap;letter-spacing:1px}
-  @media(max-width:680px){.write{grid-template-columns:1fr;gap:6px}.write .rt{display:none}}
+  .write .src{font-size:11px;color:var(--mut);white-space:nowrap;letter-spacing:1px}
+  @media(max-width:680px){.write{grid-template-columns:1fr;gap:6px}.write .src{display:none}}
+
+  /* two-up cards (fiction + channel) */
+  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .feat{border:2px solid var(--ink);border-radius:14px;padding:26px;display:flex;flex-direction:column;background:var(--paper);transition:.15s}
+  .feat:hover{box-shadow:7px 7px 0 var(--lime)}
+  .feat .tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700}
+  .feat h3{font-family:var(--serif);font-weight:800;font-size:clamp(26px,3.6vw,40px);line-height:1;margin:10px 0 12px}
+  .feat p{color:var(--ink2);font-size:14px;margin-bottom:16px}
+  .feat .em{font-style:italic;color:var(--ink)}
+  .storylinks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .storylinks a{border:1.5px solid var(--ink);border-radius:30px;padding:6px 12px;font-size:12px}
+  .storylinks a:hover{background:var(--lime)}
+  .feat .cta{margin-top:auto;font-weight:700;font-size:13px;letter-spacing:1px;border-bottom:2px solid var(--lime);align-self:flex-start;padding-bottom:3px}
+  .feat .cta:hover{color:var(--red)}
+  @media(max-width:680px){.twoup{grid-template-columns:1fr}}
 
   /* about */
   .about{display:grid;grid-template-columns:1fr 1fr;gap:46px}
@@ -133,7 +160,7 @@
   /* contact / footer */
   footer{border-top:2px solid var(--ink);margin-top:60px;padding:66px 0 40px}
   .ftlab{font-size:12px;letter-spacing:2px;color:var(--mut)}
-  .ftmail{font-family:var(--serif);font-weight:900;font-size:clamp(30px,7vw,86px);line-height:1;letter-spacing:-.02em;margin:14px 0 40px;word-break:break-all}
+  .ftmail{font-family:var(--serif);font-weight:900;font-size:clamp(28px,7vw,86px);line-height:1;letter-spacing:-.02em;margin:14px 0 40px;word-break:break-all}
   .ftmail a{border-bottom:5px solid var(--lime)}
   .ftmail a:hover{color:var(--red)}
   .ftrow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:1px;color:var(--mut)}
@@ -148,8 +175,10 @@
     <div class="logo">VALERIO_LI<span class="d">.</span></div>
     <nav class="nav">
       <a href="#work">WORK</a>
+      <a href="#field">FIELD</a>
       <a href="#vibe">VIBE CODING</a>
       <a href="#writings">WRITINGS</a>
+      <a href="#fiction">FICTION</a>
       <a href="#about">ABOUT</a>
     </nav>
   </div>
@@ -164,6 +193,9 @@
         <div class="avatar"><img src="headshot.jpg" alt="Valerio Li"></div>
         <div class="socials">
           <a class="soc" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+          <a class="soc" href="https://x.com/Valerioli86" target="_blank" rel="noopener" title="X / Twitter">X</a>
+          <a class="soc" href="https://www.youtube.com/@rio-english" target="_blank" rel="noopener" title="YouTube">YT</a>
+          <a class="soc" href="https://paragraph.com/@0xvava" target="_blank" rel="noopener" title="Sci-fi on Paragraph">&#9998;</a>
           <a class="soc" href="mailto:valerio.li.ynap@gmail.com" title="Email">@</a>
         </div>
       </div>
@@ -173,7 +205,7 @@
     <div class="bio">
       <p>Hi, I'm Valerio — a marketing &amp; communications leader with <span class="mk">15+ years</span> across luxury retail, digital transformation, and Web3. I've been General Manager at <b class="mk">YOOX NET-A-PORTER</b> and Head of Digital at <b class="mk">LVMH / Loewe</b>, and most recently <b class="mk">CMO at Infini</b> — scaling a Web3 Pay-Fi brand from <span class="mk">zero to 50,000+ users</span> across APAC and LATAM.</p>
       <p>Today I'm <span class="mk">CMO at AInfinity</span> — an AI-native content &amp; learning platform built on one idea: <em>every interaction should help you understand AI better, use it better, and grow.</em></p>
-      <p>A multilingual storyteller (<span class="mk">Mandarin &middot; English &middot; Italian</span>), I build narratives that travel across cultures — and on the side I <span class="mk">vibe code</span>, turning ideas into working products in a single sitting.</p>
+      <p>A multilingual storyteller (<span class="mk">Mandarin &middot; English &middot; Italian</span>), I build narratives that travel across cultures — and on the side I <span class="mk">vibe code</span>, write <span class="mk">sci-fi</span>, and teach AI on YouTube.</p>
     </div>
 
     <div class="creds">
@@ -206,13 +238,13 @@
     <div class="work reveal">
       <div class="meta"><div class="yr">2024 — 2025</div><div class="tg">WEB3 · PAY-FI · CRISIS COMMS</div></div>
       <div><div class="ttl">Infini</div><div class="role2">Chief Marketing Officer</div><div class="ds">Built and scaled a Web3 Pay-Fi brand from <b>zero to 50,000+ users</b> across APAC &amp; LATAM. Created the global <b>"Pay-Fi" narrative</b> across English, Mandarin &amp; Spanish, and led <b>crisis comms for a $50M breach</b> — coordinating disclosures and third-party verification to 90% fund recovery and restored trust.</div><div class="press">FEATURED IN: CoinDesk · Cointelegraph · BlockBeats · Odaily · TechFlow · Foresight · PANews</div></div>
-      <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
+      <a class="go" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
       <div class="meta"><div class="yr">2022 — 2024</div><div class="tg">CRYPTO · DEFI · TOKENOMICS</div></div>
       <div><div class="ttl">Reva Capital</div><div class="role2">Crypto Infrastructure &amp; Market Strategy Advisor</div><div class="ds">Managed a multi-vertical portfolio across <b>DeFi, NFT, and protocol layers</b>. Produced trend research and investment memos, and advised early-stage founders on <b>token design, ecosystem positioning, and GTM</b>.</div></div>
-      <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
+      <a class="go" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
@@ -238,6 +270,29 @@
 
 <!-- marquee -->
 <div class="marq alt"><div class="run">
+  <span>IN THE FIELD<i>&bull;</i></span><span>KEYNOTES<i>&bull;</i></span><span>BRANDS<i>&bull;</i></span><span>EVENTS<i>&bull;</i></span>
+  <span>IN THE FIELD<i>&bull;</i></span><span>KEYNOTES<i>&bull;</i></span><span>BRANDS<i>&bull;</i></span><span>EVENTS<i>&bull;</i></span>
+</div></div>
+
+<div class="wrap">
+  <!-- GALLERY -->
+  <section class="blk" id="field">
+    <div class="sectitle reveal" style="margin-bottom:24px">In the Field</div>
+    <div class="gallery">
+      <div class="gphoto reveal"><img src="g1.jpg" alt="On stage" loading="lazy"><div class="cap">On Stage</div></div>
+      <div class="gphoto reveal"><img src="g2.jpg" alt="YOOX NET-A-PORTER" loading="lazy"><div class="cap">YOOX NET-A-PORTER</div></div>
+      <div class="gphoto reveal"><img src="g3.jpg" alt="LVMH Loewe" loading="lazy"><div class="cap">LVMH · Loewe</div></div>
+      <div class="gphoto reveal"><img src="g4.jpg" alt="Lafite LE DIX" loading="lazy"><div class="cap">Lafite · LE DIX</div></div>
+      <div class="gphoto reveal"><img src="g5.jpg" alt="Italy at CIIE Shanghai" loading="lazy"><div class="cap">Italy @ CIIE Shanghai</div></div>
+      <div class="gphoto reveal"><img src="g6.jpg" alt="World AI Conference" loading="lazy"><div class="cap">World AI Conference</div></div>
+      <div class="gphoto reveal"><img src="g7.jpg" alt="NET-A-PORTER event" loading="lazy"><div class="cap">NET-A-PORTER Event</div></div>
+      <div class="gphoto reveal"><img src="g8.jpg" alt="Bordeaux estate" loading="lazy"><div class="cap">Bordeaux Estate</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- marquee -->
+<div class="marq"><div class="run">
   <span>VIBE CODING<i>&bull;</i></span><span>EXPERIMENTS<i>&bull;</i></span><span>PROTOTYPES<i>&bull;</i></span><span>BUILT WITH AI<i>&bull;</i></span>
   <span>VIBE CODING<i>&bull;</i></span><span>EXPERIMENTS<i>&bull;</i></span><span>PROTOTYPES<i>&bull;</i></span><span>BUILT WITH AI<i>&bull;</i></span>
 </div></div>
@@ -257,15 +312,7 @@
         <div class="tagrow"><span class="st">PROTOTYPE</span></div>
       </div>
       <div class="cell soon reveal">
-        <div><div class="code">PROMPT_FORGE</div><div class="kind">Prompt engineering lab</div></div>
-        <div class="tagrow"><span class="st">SOON</span></div>
-      </div>
-      <div class="cell soon reveal">
         <div><div class="code">CONTENT_ENGINE</div><div class="kind">AI content pipeline</div></div>
-        <div class="tagrow"><span class="st">SOON</span></div>
-      </div>
-      <div class="cell soon reveal">
-        <div><div class="code">LEARN_LOOP</div><div class="kind">Interactive learning</div></div>
         <div class="tagrow"><span class="st">SOON</span></div>
       </div>
       <div class="cell soon reveal">
@@ -277,9 +324,9 @@
 </div>
 
 <!-- marquee -->
-<div class="marq"><div class="run">
-  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
-  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
+<div class="marq alt"><div class="run">
+  <span>WRITINGS<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>MARKET STRUCTURE<i>&bull;</i></span>
+  <span>WRITINGS<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>MARKET STRUCTURE<i>&bull;</i></span>
 </div></div>
 
 <div class="wrap">
@@ -293,23 +340,60 @@
     <a class="write reveal" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">
       <div class="cat">AI<span class="dt">2025</span></div>
       <div class="wt">2025: The Year of Agent AI &amp; Agentic AI</div>
-      <div class="rt">NOTE</div>
+      <div class="src">NOTE</div>
     </a>
-    <a class="write reveal" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">
+    <a class="write reveal" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
       <div class="cat">FINTECH<span class="dt">2025</span></div>
       <div class="wt">Compliant Privacy: The Key to Next-Generation Crypto Payment Networks</div>
-      <div class="rt">ARTICLE</div>
+      <div class="src">INFINI</div>
     </a>
-    <a class="write reveal" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">
+    <a class="write reveal" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener">
+      <div class="cat">MARKETS<span class="dt">2025</span></div>
+      <div class="wt">Money at Formula 1 Speed: Stablecoins and the Future of Finance</div>
+      <div class="src">REVA CAPITAL</div>
+    </a>
+    <a class="write reveal" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener">
+      <div class="cat">MARKETS<span class="dt">2025</span></div>
+      <div class="wt">How Citadel's Options Expansion Could Change the Rules of Trading</div>
+      <div class="src">REVA CAPITAL</div>
+    </a>
+    <a class="write reveal" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
       <div class="cat">PAYMENTS<span class="dt">2024</span></div>
-      <div class="wt">Stablecoin Cross-Border Payments: SWIFT vs. Blockchain — How INFINI Fits In</div>
-      <div class="rt">ARTICLE</div>
+      <div class="wt">Stablecoin Cross-Border Payments: SWIFT vs. Blockchain — How Infini Fits In</div>
+      <div class="src">INFINI</div>
     </a>
-    <a class="write reveal" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">
+    <a class="write reveal" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
       <div class="cat">STRATEGY<span class="dt">2024</span></div>
       <div class="wt">Why Enterprises Must Pay Attention to Stablecoin Payments</div>
-      <div class="rt">ARTICLE</div>
+      <div class="src">INFINI</div>
     </a>
+  </section>
+
+  <!-- FICTION + CHANNEL -->
+  <section class="blk" id="fiction">
+    <div class="twoup">
+      <div class="feat reveal">
+        <div class="tag">Fiction &middot; Sci-Fi</div>
+        <h3>0xVava</h3>
+        <p class="em">"Decentralization will destroy the world. Then a brand new magic world is reborn."</p>
+        <p>Speculative fiction at the edge of crypto, AI, and the human mind — published on Paragraph.</p>
+        <div class="storylinks">
+          <a href="https://paragraph.com/@0xvava/poinciana" target="_blank" rel="noopener">Poinciana</a>
+          <a href="https://paragraph.com/@0xvava/enigma" target="_blank" rel="noopener">Enigma</a>
+          <a href="https://paragraph.com/@0xvava/deja-vu" target="_blank" rel="noopener">Deja Vu</a>
+          <a href="https://paragraph.com/@0xvava/insomnia" target="_blank" rel="noopener">Insomnia</a>
+          <a href="https://paragraph.com/@0xvava/implicator" target="_blank" rel="noopener">Implicator</a>
+        </div>
+        <a class="cta" href="https://paragraph.com/@0xvava" target="_blank" rel="noopener">Read on Paragraph &#8599;</a>
+      </div>
+      <div class="feat reveal">
+        <div class="tag">YouTube &middot; AI Education</div>
+        <h3>@rio-english</h3>
+        <p>Learn English with AI. A channel teaching English through <b class="mk">AIGC video</b> — making language learning interactive, visual, and powered by generative AI.</p>
+        <p style="color:var(--mut);font-size:13px">On-brand with AInfinity's mission: turning AI into something everyone can learn from.</p>
+        <a class="cta" href="https://www.youtube.com/@rio-english" target="_blank" rel="noopener">Watch on YouTube &#8599;</a>
+      </div>
+    </div>
   </section>
 
   <!-- ABOUT -->
@@ -336,6 +420,7 @@
           <li><span>Based</span><b>Shanghai, China</b></li>
           <li><span>Education</span><b>SISU — Italian Lang. &amp; Lit.</b></li>
           <li><span>Languages</span><b>Mandarin · English · Italian</b></li>
+          <li><span>Also</span><b>Sci-fi author · AI educator</b></li>
         </ul>
       </div>
     </div>
@@ -351,7 +436,9 @@
       <span>&copy; 2026 Valerio Li &middot; Every Interaction Makes You Grow</span>
       <span>
         <a href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">LINKEDIN</a> &nbsp;/&nbsp;
-        <a href="https://ai-topic-director.vercel.app" target="_blank" rel="noopener">PROJECT 01</a> &nbsp;/&nbsp;
+        <a href="https://x.com/Valerioli86" target="_blank" rel="noopener">X</a> &nbsp;/&nbsp;
+        <a href="https://www.youtube.com/@rio-english" target="_blank" rel="noopener">YOUTUBE</a> &nbsp;/&nbsp;
+        <a href="https://paragraph.com/@0xvava" target="_blank" rel="noopener">PARAGRAPH</a> &nbsp;/&nbsp;
         <a href="#">TOP &#8593;</a>
       </span>
     </div>
@@ -361,7 +448,7 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{
     if(e.isIntersecting){e.target.style.transition='opacity .7s ease, transform .7s ease';e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target);}
-  });},{threshold:.1});
+  });},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>

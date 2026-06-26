@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valerio Li — Marketing × AI × Vibe Coding</title>
-<meta name="description" content="Valerio Li — CMO at AInfinity. A decade of digital and growth leadership across luxury, fintech, and AI. Plus vibe-coded experiments.">
-<meta property="og:title" content="Valerio Li — Marketing × AI × Vibe Coding">
-<meta property="og:description" content="CMO at AInfinity. Growth across luxury, fintech, and AI — and a running index of vibe-coded projects.">
+<title>Valerio Li — Marketing × Luxury × Web3 × AI</title>
+<meta name="description" content="Valerio Li — CMO at AInfinity. 15+ years of marketing & growth leadership across luxury retail, digital, and Web3. GM at YOOX NET-A-PORTER, Head of Digital at LVMH/Loewe, CMO at Infini.">
+<meta property="og:title" content="Valerio Li — Marketing × Luxury × Web3 × AI">
+<meta property="og:description" content="CMO at AInfinity. 15+ years scaling brands across luxury, Web3, and AI — APAC & LATAM.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,18 +43,19 @@
   .hero{padding:70px 0 40px}
   .namerow{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
   h1.name{font-family:var(--serif);font-weight:900;font-size:clamp(64px,13vw,168px);line-height:.82;letter-spacing:-.03em}
-  .avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--lime),var(--limed));display:grid;place-items:center;font-family:var(--serif);font-weight:900;font-size:40px;color:var(--ink);border:3px solid var(--ink);flex:none}
+  .avatar{width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid var(--ink);flex:none;box-shadow:5px 5px 0 var(--lime)}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
   .socials{display:flex;gap:8px}
   .soc{width:38px;height:38px;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--paper);transition:.15s}
   .soc:hover{background:var(--ink);color:var(--paper)}
   .role{margin-top:18px;font-size:13px;letter-spacing:2px;color:var(--red);font-weight:700;text-transform:uppercase}
 
-  .bio{margin-top:26px;max-width:880px;border-left:5px solid var(--lime);padding-left:22px}
+  .bio{margin-top:26px;max-width:900px;border-left:5px solid var(--lime);padding-left:22px}
   .bio p{margin-bottom:16px;font-size:clamp(15px,1.7vw,17px);color:var(--ink2)}
   .bio p:last-child{margin-bottom:0}
 
   /* credential row */
-  .creds{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:36px;padding-top:26px;border-top:1px dashed var(--line)}
+  .creds{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;margin-top:36px;padding-top:26px;border-top:1px dashed var(--line)}
   .creds .lab{font-size:11px;letter-spacing:1px;color:var(--mut);margin-right:6px}
   .creds .c{font-weight:700;font-size:13px;letter-spacing:.5px}
   .creds .sep{color:var(--dim)}
@@ -71,17 +72,26 @@
   .sectitle{font-family:var(--serif);font-weight:800;font-size:clamp(34px,6vw,68px);line-height:.92;letter-spacing:-.02em;margin-bottom:8px}
 
   /* work cards */
-  .work{display:grid;grid-template-columns:200px 1fr auto;gap:26px;align-items:start;padding:34px 0;border-top:2px solid var(--ink)}
+  .work{display:grid;grid-template-columns:210px 1fr auto;gap:26px;align-items:start;padding:34px 0;border-top:2px solid var(--ink)}
   .work:last-child{border-bottom:2px solid var(--ink)}
   .work .meta .yr{font-weight:700;font-size:15px}
   .work .meta .tg{font-size:11px;letter-spacing:1px;color:var(--mut);margin-top:8px;line-height:1.8}
   .work .ttl{font-family:var(--serif);font-weight:800;font-size:clamp(24px,3.6vw,38px);line-height:1.02;letter-spacing:-.01em}
-  .work .ds{margin-top:12px;max-width:620px;color:var(--ink2);font-size:14px}
+  .work .role2{font-size:12px;letter-spacing:1px;color:var(--ink2);margin-top:6px;text-transform:uppercase}
+  .work .ds{margin-top:12px;max-width:640px;color:var(--ink2);font-size:14px}
   .work .ds b{background:var(--lime);padding:.05em .2em}
+  .work .press{margin-top:10px;font-size:11px;color:var(--mut);letter-spacing:.5px}
   .work .go{align-self:center;font-size:12px;font-weight:700;letter-spacing:1px;white-space:nowrap;border:2px solid var(--ink);padding:9px 14px;border-radius:8px;transition:.15s;display:flex;gap:7px;align-items:center}
   .work .go:hover{background:var(--ink);color:var(--paper)}
-  .work .go.dead{border-style:dashed;color:var(--mut);border-color:var(--line);pointer-events:none}
   @media(max-width:760px){.work{grid-template-columns:1fr;gap:12px;padding:26px 0}.work .go{align-self:start}}
+  .earlier{padding:26px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);font-size:13px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:8px 18px}
+  .earlier .lab{color:var(--mut);letter-spacing:1px;width:100%;font-size:11px;margin-bottom:4px}
+  .earlier b{color:var(--ink)}
+
+  /* expertise chips */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .chip{border:1.5px solid var(--ink);border-radius:30px;padding:7px 14px;font-size:12px;letter-spacing:.3px;background:var(--paper)}
+  .chip:hover{background:var(--lime)}
 
   /* vibe grid */
   .vibe-h{font-family:var(--serif);font-weight:900;font-size:clamp(48px,11vw,128px);line-height:.84;letter-spacing:-.03em;margin-bottom:14px}
@@ -117,7 +127,7 @@
   .about .col p{color:var(--ink2);font-size:14px;margin-bottom:14px}
   .facts{list-style:none;font-size:13px}
   .facts li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:14px}
-  .facts li b{color:var(--ink)}
+  .facts li b{color:var(--ink);text-align:right}
   @media(max-width:760px){.about{grid-template-columns:1fr;gap:26px}}
 
   /* contact / footer */
@@ -150,37 +160,38 @@
   <section class="hero">
     <div class="namerow">
       <h1 class="name">VALERIO<br>LI</h1>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="avatar">VL</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="avatar"><img src="headshot.jpg" alt="Valerio Li"></div>
         <div class="socials">
           <a class="soc" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener" title="LinkedIn">in</a>
           <a class="soc" href="mailto:valerio.li.ynap@gmail.com" title="Email">@</a>
         </div>
       </div>
     </div>
-    <div class="role">CMO @ AInfinity &middot; Founding an AI startup &middot; Shanghai</div>
+    <div class="role">CMO @ AInfinity &middot; 15+ Years Luxury &times; Web3 &times; AI &middot; Shanghai</div>
 
     <div class="bio">
-      <p>Hi, I'm Valerio — a growth and digital leader with a <span class="mk">decade across luxury, fintech, and AI</span>. I've led e-commerce and digital for <b class="mk">LVMH</b> and <b class="mk">Lafite Rothschild</b>, marketing and growth for crypto-payments startup <b class="mk">INFINI</b>, and I'm a General Partner at <b class="mk">Reva Capital</b>.</p>
+      <p>Hi, I'm Valerio — a marketing &amp; communications leader with <span class="mk">15+ years</span> across luxury retail, digital transformation, and Web3. I've been General Manager at <b class="mk">YOOX NET-A-PORTER</b> and Head of Digital at <b class="mk">LVMH / Loewe</b>, and most recently <b class="mk">CMO at Infini</b> — scaling a Web3 Pay-Fi brand from <span class="mk">zero to 50,000+ users</span> across APAC and LATAM.</p>
       <p>Today I'm <span class="mk">CMO at AInfinity</span> — an AI-native content &amp; learning platform built on one idea: <em>every interaction should help you understand AI better, use it better, and grow.</em></p>
-      <p>On the side I <span class="mk">vibe code</span> — turning ideas into working products in a single sitting, with AI as my pair. This is the running index of my work and experiments.</p>
+      <p>A multilingual storyteller (<span class="mk">Mandarin &middot; English &middot; Italian</span>), I build narratives that travel across cultures — and on the side I <span class="mk">vibe code</span>, turning ideas into working products in a single sitting.</p>
     </div>
 
     <div class="creds">
       <span class="lab">TRACK RECORD //</span>
       <span class="c">AINFINITY</span><span class="sep">/</span>
-      <span class="c">REVA CAPITAL</span><span class="sep">/</span>
       <span class="c">INFINI</span><span class="sep">/</span>
-      <span class="c">LVMH</span><span class="sep">/</span>
-      <span class="c">LAFITE ROTHSCHILD</span>
+      <span class="c">REVA CAPITAL</span><span class="sep">/</span>
+      <span class="c">LVMH &middot; LOEWE</span><span class="sep">/</span>
+      <span class="c">YOOX NET-A-PORTER</span><span class="sep">/</span>
+      <span class="c">FERRAGAMO</span>
     </div>
   </section>
 </div>
 
 <!-- marquee -->
 <div class="marq"><div class="run">
-  <span>SELECTED WORK<i>&bull;</i></span><span>GROWTH &amp; STRATEGY<i>&bull;</i></span><span>AI &times; MARKETING<i>&bull;</i></span><span>CASE STUDIES<i>&bull;</i></span>
-  <span>SELECTED WORK<i>&bull;</i></span><span>GROWTH &amp; STRATEGY<i>&bull;</i></span><span>AI &times; MARKETING<i>&bull;</i></span><span>CASE STUDIES<i>&bull;</i></span>
+  <span>SELECTED WORK<i>&bull;</i></span><span>LUXURY &amp; WEB3<i>&bull;</i></span><span>BRAND &amp; GROWTH<i>&bull;</i></span><span>GTM &amp; COMMS<i>&bull;</i></span>
+  <span>SELECTED WORK<i>&bull;</i></span><span>LUXURY &amp; WEB3<i>&bull;</i></span><span>BRAND &amp; GROWTH<i>&bull;</i></span><span>GTM &amp; COMMS<i>&bull;</i></span>
 </div></div>
 
 <div class="wrap">
@@ -188,32 +199,39 @@
   <section class="blk" id="work">
     <div class="work reveal">
       <div class="meta"><div class="yr">2026 — NOW</div><div class="tg">AI · BRAND · GROWTH · GTM</div></div>
-      <div><div class="ttl">AInfinity</div><div class="ds">Chief Marketing Officer. Building the brand and growth engine for an <b>AI-native content &amp; learning platform</b> — turning every interaction into learning, capability, and growth. Mission: make AI accessible, useful, and valuable for everyone.</div></div>
+      <div><div class="ttl">AInfinity</div><div class="role2">Chief Marketing Officer</div><div class="ds">Building the brand and growth engine for an <b>AI-native content &amp; learning platform</b> — turning every interaction into learning, capability, and growth. Mission: make AI accessible, useful, and valuable for everyone.</div></div>
       <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
-      <div class="meta"><div class="yr">2022 — NOW</div><div class="tg">VENTURE · WEB3 · FINTECH</div></div>
-      <div><div class="ttl">Reva Capital</div><div class="ds">General Partner. Investing across <b>fintech, stablecoins, and market structure</b> — from on-chain liquidity to the future of compliant crypto payments.</div></div>
+      <div class="meta"><div class="yr">2024 — 2025</div><div class="tg">WEB3 · PAY-FI · CRISIS COMMS</div></div>
+      <div><div class="ttl">Infini</div><div class="role2">Chief Marketing Officer</div><div class="ds">Built and scaled a Web3 Pay-Fi brand from <b>zero to 50,000+ users</b> across APAC &amp; LATAM. Created the global <b>"Pay-Fi" narrative</b> across English, Mandarin &amp; Spanish, and led <b>crisis comms for a $50M breach</b> — coordinating disclosures and third-party verification to 90% fund recovery and restored trust.</div><div class="press">FEATURED IN: CoinDesk · Cointelegraph · BlockBeats · Odaily · TechFlow · Foresight · PANews</div></div>
       <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
-      <div class="meta"><div class="yr">2025</div><div class="tg">MARKETING · GROWTH · PAYMENTS</div></div>
-      <div><div class="ttl">INFINI</div><div class="ds">Marketing &amp; Growth Leader for a <b>stablecoin cross-border payments</b> network — positioning compliant privacy and on-chain settlement against legacy rails.</div></div>
+      <div class="meta"><div class="yr">2022 — 2024</div><div class="tg">CRYPTO · DEFI · TOKENOMICS</div></div>
+      <div><div class="ttl">Reva Capital</div><div class="role2">Crypto Infrastructure &amp; Market Strategy Advisor</div><div class="ds">Managed a multi-vertical portfolio across <b>DeFi, NFT, and protocol layers</b>. Produced trend research and investment memos, and advised early-stage founders on <b>token design, ecosystem positioning, and GTM</b>.</div></div>
       <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
-      <div class="meta"><div class="yr">2020 — 2022</div><div class="tg">E-COMMERCE · LUXURY · DIGITAL</div></div>
-      <div><div class="ttl">LVMH</div><div class="ds">E-commerce &amp; Digital Leader. Drove <b>digital growth for luxury maisons</b> across the world's leading luxury group, in Shanghai.</div></div>
+      <div class="meta"><div class="yr">2020 — 2022</div><div class="tg">LUXURY · E-COMMERCE · OMNICHANNEL</div></div>
+      <div><div class="ttl">LVMH &middot; Loewe</div><div class="role2">Head of Digital &amp; Omnichannel</div><div class="ds">Built Loewe's digital business from <b>0 to $30M USD revenue in Year 1</b> — the highest EBITDA across the group. Owned omnichannel delivery across Tmall Luxury Pavilion, Mini Program, CRM, and WeChat retail.</div></div>
       <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
     <div class="work reveal">
-      <div class="meta"><div class="yr">2019 — 2020</div><div class="tg">DIGITAL · WINE · LUXURY</div></div>
-      <div><div class="ttl">Lafite Rothschild</div><div class="ds">E-commerce &amp; Digital Leader at Domaines Barons de Rothschild (Lafite) — <b>luxury wine, digital, and brand</b> across Shanghai and Bordeaux.</div></div>
+      <div class="meta"><div class="yr">2016 — 2019</div><div class="tg">GM · P&amp;L · LUXURY E-COM</div></div>
+      <div><div class="ttl">YOOX NET-A-PORTER</div><div class="role2">Retail Manager / General Manager</div><div class="ds">Full <b>P&amp;L ownership</b> across operations, brand comms, and product. Reversed an underperforming market to <b>#1 within 12 months</b>, and launched a 120+ Italian-brands campaign with the Italian Government Agency.</div></div>
       <a class="go" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener">DETAILS &#8599;</a>
+    </div>
+
+    <div class="earlier reveal">
+      <span class="lab">EARLIER //</span>
+      <span><b>LVMH Fashion Group</b> — Digital &amp; Omnichannel Manager · 2019–2020</span>
+      <span><b>Salvatore Ferragamo</b> — Buyer · 2012–2015</span>
+      <span><b>United Outlet (Italy)</b> — Purchasing Manager &amp; EA to CEO · 2009–2012</span>
     </div>
   </section>
 </div>
@@ -260,8 +278,8 @@
 
 <!-- marquee -->
 <div class="marq"><div class="run">
-  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>FINTECH<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
-  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>FINTECH<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
+  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
+  <span>WRITINGS<i>&bull;</i></span><span>NOTES ON AI<i>&bull;</i></span><span>WEB3 &amp; PAY-FI<i>&bull;</i></span><span>GROWTH<i>&bull;</i></span>
 </div></div>
 
 <div class="wrap">
@@ -297,16 +315,27 @@
   <!-- ABOUT -->
   <section class="blk" id="about">
     <div class="about">
-      <div class="big reveal">I work where <b>marketing, technology, and business</b> meet — turning complex systems into clear decisions, and treating <b>AI as a multiplier</b> of human judgment and creativity.</div>
+      <div>
+        <div class="big reveal">From <b>luxury houses</b> to <b>Web3</b> to <b>AI</b> — I work where marketing, technology, and business meet, building narratives that travel across cultures and treating <b>AI as a multiplier</b> of human judgment and creativity.</div>
+        <div class="chips reveal">
+          <span class="chip">Strategic GTM (Web2 + Web3)</span>
+          <span class="chip">Multilingual Content Strategy</span>
+          <span class="chip">Crisis Comms &amp; Reputation</span>
+          <span class="chip">Token Ecosystem Narrative</span>
+          <span class="chip">Community &amp; Ambassadors</span>
+          <span class="chip">KOL / KOC Relations</span>
+          <span class="chip">Media Relations</span>
+        </div>
+      </div>
       <div class="col reveal">
         <h4>The short version</h4>
-        <p>Ten years moving between luxury (LVMH, Lafite Rothschild), fintech and crypto (INFINI, Reva Capital), and now AI (AInfinity). Italian-trained linguist turned growth operator turned builder — equally at home in a brand deck, a pitch, or a code editor.</p>
+        <p>I started in Italian fashion (Ferragamo, United Outlet), led luxury e-commerce and omnichannel at YOOX NET-A-PORTER and LVMH / Loewe, then moved into Web3 — advising at Reva Capital and running global brand and growth at Infini. Now I'm building brand at AInfinity. Throughout: multilingual storytelling, data-driven growth, and audiences across APAC and LATAM.</p>
         <ul class="facts">
           <li><span>Now</span><b>CMO, AInfinity</b></li>
+          <li><span>Experience</span><b>15+ years</b></li>
           <li><span>Based</span><b>Shanghai, China</b></li>
-          <li><span>Education</span><b>Shanghai Int'l Studies University</b></li>
-          <li><span>Languages</span><b>Chinese · English · Italian +</b></li>
-          <li><span>Also</span><b>GIAC Python Coder (GPYC)</b></li>
+          <li><span>Education</span><b>SISU — Italian Lang. &amp; Lit.</b></li>
+          <li><span>Languages</span><b>Mandarin · English · Italian</b></li>
         </ul>
       </div>
     </div>

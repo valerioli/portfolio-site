@@ -1,5 +1,6 @@
 # Valerio Li — portfolio site
 
+
 A single-page, editorial-style showcase of vibe-coded projects. Static HTML, no build step.
 
 ```

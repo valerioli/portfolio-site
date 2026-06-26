@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Creator Radar — Valerio Li</title>
+<meta name="description" content="AI Creator Radar (KOL_RADAR) — an automated content-intelligence pipeline that tracks AI creators on Douyin & Bilibili. Interactive demo.">
+<link rel="icon" href="headshot.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3f0e8; --ink:#15130e; --ink2:#3c382e; --mut:#857e6c; --dim:#a8a08c;
+    --line:#d6d0c0; --lime:#cdf24a; --limed:#b6e02f; --red:#e8442a; --teal:#34c3a0;
+    --tiktok:#ff3b6b; --bili:#22a7e0;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --serif:'Fraunces',Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  ::selection{background:var(--lime);color:var(--ink)}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  /* top */
+  .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .topin{max-width:1180px;margin:0 auto;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .logo{font-weight:700;font-size:15px;letter-spacing:1px}.logo .d{color:var(--red)}
+  .back{font-size:12px;letter-spacing:1px;color:var(--ink2)}.back:hover{color:var(--ink);border-bottom:2px solid var(--lime)}
+
+  /* hero */
+  .hero{padding:54px 0 24px}
+  .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;display:flex;gap:12px;align-items:center;margin-bottom:18px}
+  .kick::before{content:"";width:40px;height:2px;background:var(--red)}
+  h1{font-family:var(--serif);font-weight:900;font-size:clamp(42px,8vw,92px);line-height:.9;letter-spacing:-.03em}
+  h1 .zh{font-size:.34em;color:var(--mut);font-weight:400;letter-spacing:0;margin-left:14px}
+  .lede{margin-top:20px;max-width:760px;color:var(--ink2);font-size:15px;border-left:5px solid var(--lime);padding-left:20px}
+  .runbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:26px}
+  .runbtn{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:var(--ink);color:var(--paper);border:2px solid var(--ink);border-radius:8px;padding:12px 20px;cursor:pointer;transition:.15s}
+  .runbtn:hover{background:var(--lime);color:var(--ink)}
+  .runbtn:disabled{opacity:.5;cursor:wait}
+  .status{font-size:12.5px;color:var(--mut);letter-spacing:.3px}
+  .status b{color:var(--ink)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:7px;box-shadow:0 0 8px var(--teal)}
+  .dot.run{background:var(--red);box-shadow:0 0 8px var(--red);animation:bp .8s infinite}
+  @keyframes bp{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* workflow */
+  .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:30px 0 8px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:18px 0}
+  .step{text-align:center;position:relative;padding:6px 4px;border-radius:8px;transition:.25s}
+  .step.active{background:var(--lime)}
+  .step.done .n{background:var(--ink);color:var(--paper)}
+  .step .n{width:30px;height:30px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-weight:700;margin:0 auto 8px;font-size:13px;background:var(--paper);transition:.25s}
+  .step.active .n{background:var(--ink);color:var(--lime)}
+  .step .t{font-size:11.5px;font-weight:700;letter-spacing:.5px}
+  .step .z{font-size:10px;color:var(--mut)}
+  @media(max-width:760px){.flow{grid-template-columns:repeat(3,1fr);gap:10px}}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}
+  .stat{border:2px solid var(--ink);border-radius:10px;padding:14px 16px}
+  .stat .v{font-family:var(--serif);font-weight:900;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+  .stat .l{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .cols{display:grid;grid-template-columns:1fr 330px;gap:18px;align-items:start;margin-top:10px}
+  @media(max-width:880px){.cols{grid-template-columns:1fr}}
+  .panel{border:2px solid var(--ink);border-radius:12px;padding:16px}
+  .ph{font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-.01em;margin-bottom:4px}
+  .ph .zh{font-family:var(--mono);font-size:11px;color:var(--mut);font-weight:400;margin-left:8px;letter-spacing:.5px}
+  .psub{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+
+  /* signal cards */
+  .sig{border:1.5px solid var(--line);border-radius:10px;padding:15px;margin-bottom:13px;transition:.2s;position:relative;overflow:hidden}
+  .sig:hover{border-color:var(--ink)}
+  .sig.fresh{border-color:var(--limed);box-shadow:0 0 0 3px rgba(205,242,74,.4)}
+  .sig .new{position:absolute;top:0;right:0;background:var(--lime);color:var(--ink);font-size:9px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-bottom-left-radius:8px}
+  .sig .meta{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mut);margin-bottom:7px;flex-wrap:wrap}
+  .fac{font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:5px;letter-spacing:.4px}
+  .fac.tt{background:rgba(255,59,107,.14);color:var(--tiktok);border:1px solid rgba(255,59,107,.4)}
+  .fac.bl{background:rgba(34,167,224,.14);color:var(--bili);border:1px solid rgba(34,167,224,.4)}
+  .sig h3{font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.18;margin-bottom:8px}
+  .sig .sum{font-size:12.5px;color:var(--ink2);margin-bottom:10px}
+  .lab{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);margin:9px 0 5px;display:flex;gap:6px;align-items:center}
+  .pts{font-size:12px;color:var(--ink2);padding-left:2px}
+  .pts li{list-style:none;padding:2px 0 2px 16px;position:relative}
+  .pts li::before{content:"\203A";position:absolute;left:0;color:var(--red);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .chip{font-size:11px;border:1.3px solid var(--ink);border-radius:20px;padding:3px 10px}
+  .chip.pain{border-color:var(--red);color:var(--red)}
+  .chip.topic{background:var(--lime);border-color:var(--lime)}
+  .metrics{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:12px;font-variant-numeric:tabular-nums}
+  .metrics span b{color:var(--ink)} .metrics span{color:var(--mut)}
+  .quote{margin-top:11px;font-size:12px;color:var(--ink2);font-style:italic;border-left:3px solid var(--lime);padding-left:10px}
+
+  /* side lists */
+  .crow{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .crow:last-child{border-bottom:0}
+  .pulse{width:8px;height:8px;border-radius:50%;flex:none}
+  .pulse.on{background:var(--teal);box-shadow:0 0 7px var(--teal);animation:bp 2.4s infinite}
+  .pulse.idle{background:var(--dim)}
+  .crow .nm{font-weight:700}.crow .mm{color:var(--mut);font-size:11px}
+  .crow .rt{margin-left:auto;font-size:10.5px;color:var(--mut);text-align:right}
+  .log{font-family:var(--mono);font-size:11.5px;line-height:1.5}
+  .log div{padding:5px 0;border-bottom:1px solid rgba(214,208,192,.6);color:var(--mut)}
+  .log .ok{color:var(--teal)} .log .t{color:var(--ink)} .log .er{color:var(--red)}
+
+  footer{border-top:2px solid var(--ink);margin-top:50px;padding:40px 0 36px;font-size:12px;letter-spacing:1px;color:var(--mut);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  footer a:hover{color:var(--ink)}
+  .note{font-size:11px;color:var(--dim);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="top"><div class="topin">
+  <div class="logo">VALERIO_LI<span class="d">.</span></div>
+  <a class="back" href="index.html">&#8592; BACK TO HOME</a>
+</div></div>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="kick">Vibe Coding &middot; Internal Tool</div>
+    <h1>AI Creator Radar<span class="zh">AI 博主雷达</span></h1>
+    <div class="lede">An automated content-intelligence pipeline I built on Lark Base. It tracks AI creators across <b>Douyin</b> &amp; <b>Bilibili</b> — scheduled crawlers pull new videos, transcribe and summarize them into key points, user pain-points and expandable topic ideas, snapshot engagement metrics over time, and mine comments for sentiment and debate. The output feeds AInfinity's content strategy.</div>
+    <div class="runbar">
+      <button class="runbtn" id="run">&#9658; Run a scan</button>
+      <div class="status"><span class="dot" id="dot"></span><span id="status">Idle — last scan 2h ago. Click to simulate a crawl.</span></div>
+    </div>
+    <div class="note">Interactive demo with representative data. The live tool runs on Lark Base + scheduled crawlers.</div>
+  </section>
+
+  <!-- workflow -->
+  <div class="flow" id="flow">
+    <div class="step" data-i="0"><div class="n">1</div><div class="t">Crawl</div><div class="z">采集</div></div>
+    <div class="step" data-i="1"><div class="n">2</div><div class="t">Transcribe</div><div class="z">转写</div></div>
+    <div class="step" data-i="2"><div class="n">3</div><div class="t">Summarize</div><div class="z">摘要</div></div>
+    <div class="step" data-i="3"><div class="n">4</div><div class="t">Snapshot</div><div class="z">数据快照</div></div>
+    <div class="step" data-i="4"><div class="n">5</div><div class="t">Mine Comments</div><div class="z">评论洞察</div></div>
+    <div class="step" data-i="5"><div class="n">6</div><div class="t">Topic Signals</div><div class="z">选题线索</div></div>
+  </div>
+
+  <!-- stats -->
+  <div class="stats">
+    <div class="stat"><div class="v" id="s-creators">6</div><div class="l">Creators tracked</div></div>
+    <div class="stat"><div class="v" id="s-signals">24</div><div class="l">Content signals</div></div>
+    <div class="stat"><div class="v" id="s-comments">3.1K</div><div class="l">Comments mined</div></div>
+    <div class="stat"><div class="v" id="s-topics">17</div><div class="l">Topic ideas surfaced</div></div>
+  </div>
+
+  <div class="cols">
+    <!-- main: signals -->
+    <div class="panel">
+      <div class="ph">Content Signals<span class="zh">内容线索池</span></div>
+      <div class="psub">Newest videos, distilled into briefs</div>
+      <div id="signals"></div>
+    </div>
+
+    <!-- side -->
+    <div>
+      <div class="panel" style="margin-bottom:18px">
+        <div class="ph" style="font-size:18px">Tracked Creators<span class="zh">AI 博主雷达</span></div>
+        <div class="psub">Continuous tracking</div>
+        <div id="creators"></div>
+      </div>
+      <div class="panel">
+        <div class="ph" style="font-size:18px">Crawler Runs<span class="zh">采集日志</span></div>
+        <div class="psub">Scheduled jobs</div>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- comment insights -->
+  <div class="panel" style="margin-top:18px">
+    <div class="ph" style="font-size:18px">Audience Comments<span class="zh">评论洞察</span></div>
+    <div class="psub">Sampled &amp; tagged from top videos</div>
+    <div id="comments" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Valerio Li &middot; AI Creator Radar (demo)</span>
+    <span><a href="index.html">&#8592; HOME</a></span>
+  </footer>
+</div>
+
+<script>
+const FAC={tiktok:{n:'Douyin',c:'tt'},bili:{n:'Bilibili',c:'bl'}};
+const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':(''+n);
+
+const CREATORS=[
+  {n:'AI 进化论 · Evolved',p:'tiktok',crawl:30,on:1,last:'8m ago'},
+  {n:'Prompt 工坊 · PromptLab',p:'bili',crawl:20,on:1,last:'22m ago'},
+  {n:'硅基漫游 · SiliconDrift',p:'tiktok',crawl:25,on:1,last:'1h ago'},
+  {n:'AGI 观察 · AGIWatch',p:'bili',crawl:15,on:1,last:'2h ago'},
+  {n:'数字游民 · Nomad.ai',p:'tiktok',crawl:20,on:0,last:'1d ago'},
+  {n:'代码与诗 · CodePoet',p:'bili',crawl:18,on:1,last:'3h ago'},
+];
+let SIGNALS=[
+  {p:'tiktok',cr:'AI 进化论',t:'I rebuilt my whole workflow with an AI agent — here’s what broke',sum:'A creator hands daily ops to an agent for a week; honest look at where it fails.',pts:['Agents shine on repetitive multi-step tasks','They loop or stall without clear exit conditions','Human-in-the-loop checkpoints are non-negotiable'],pain:['Agent loops','No exit condition','Trust'],topics:['Agent guardrails 101','Build a safe approval step','"When NOT to use an agent"'],m:{v:842000,l:61000,s:12000,sh:4200,c:1900},q:'Tried this — my agent kept re-booking the same meeting 7 times 😭 anyone solve?'},
+  {p:'bili',cr:'Prompt 工坊',t:'Why your RAG pipeline hallucinates (and the 3-line fix)',sum:'Walks through chunking + reranking; a tiny change cuts wrong answers sharply.',pts:['Bad chunking is the #1 cause of hallucination','Add a reranker before the LLM','Cite sources to make errors visible'],pain:['Hallucination','Chunking','Citations'],topics:['Reranking explained simply','RAG eval checklist','Show the citation UI'],m:{v:430000,l:33000,s:9800,sh:2100,c:880},q:'The 3-line fix actually worked on my docs bot. Underrated video.'},
+  {p:'tiktok',cr:'硅基漫游',t:'Sora vs Veo: which one actually ships?',sum:'Side-by-side on real briefs; verdict on consistency, control, and cost.',pts:['Veo wins on motion consistency','Sora is stronger on stylized scenes','Both still need heavy prompt iteration'],pain:['Consistency','Cost','Prompt effort'],topics:['Prompt patterns that hold','Cost-per-usable-clip','Hybrid pipeline'],m:{v:1230000,l:96000,s:21000,sh:9100,c:3400},q:'Finally a comparison on actual deliverables, not cherry-picked demos.'},
+  {p:'bili',cr:'AGI 观察',t:'I gave 5 models the same startup brief',sum:'Compares planning quality across frontier models on a 0-to-1 product task.',pts:['Models diverge most on prioritization','Best output came from chaining two models','Taste still has to come from you'],pain:['Prioritization','Taste','Chaining'],topics:['Model-chaining recipe','"Taste" as a skill','GTM from one prompt'],m:{v:308000,l:24000,s:7200,sh:1600,c:640},q:'The chaining trick is gold. Doing this for my next launch.'},
+];
+const COMMENTS=[
+  {u:'@coder_lin',tag:'pain',t:'My agent loops forever on edge cases — need a hard stop pattern.'},
+  {u:'@mira.builds',tag:'topic',t:'Please do a full tutorial on the reranker setup!'},
+  {u:'@skeptic_99',tag:'debate',t:'Veo better? Hard disagree — Sora’s control is way ahead now.'},
+  {u:'@nomaddev',tag:'pain',t:'RAG citations broke my latency budget. Tradeoffs?'},
+  {u:'@ava_ml',tag:'topic',t:'Would love a "when NOT to use an agent" breakdown.'},
+  {u:'@quanttao',tag:'debate',t:'Cost-per-clip numbers don’t match mine — region pricing?'},
+];
+const TAGN={pain:'User pain',topic:'Topic request',debate:'Controversy'};
+const TAGC={pain:'var(--red)',topic:'var(--limed)',debate:'var(--bili)'};
+
+const POOL=[
+  {p:'tiktok',cr:'数字游民',t:'The agent that books my meetings — full build',sum:'End-to-end build of a calendar agent with approval gates and a fallback.',pts:['Wrap every action in a confirm step','Log everything for auditing','Fail loud, not silent'],pain:['Approval UX','Auditing','Silent fails'],topics:['Approval-gate template','Agent audit log','Demo: it books a call'],m:{v:120000,l:9000,s:2600,sh:540,c:210},q:'The approval gate idea fixed my runaway-agent problem. Thank you!'},
+  {p:'bili',cr:'代码与诗',t:'Vibe coding a startup in a weekend',sum:'Ships a working MVP in 48h with AI as pair; what to automate vs own.',pts:['Automate boilerplate, own the taste','Ship ugly, iterate on real usage','Speed compounds when you cut ceremony'],pain:['Scope creep','Polish trap','Ceremony'],topics:['48h MVP checklist','What to NOT build','From prompt to deploy'],m:{v:560000,l:44000,s:13000,sh:3300,c:1500},q:'"Ship ugly" is the permission I needed. Launched mine this weekend.'},
+];
+
+function facHtml(p){return `<span class="fac ${FAC[p].c}">${FAC[p].n}</span>`;}
+function sigHtml(s,fresh){
+  return `<div class="sig${fresh?' fresh':''}">${fresh?'<div class="new">NEW</div>':''}
+    <div class="meta">${facHtml(s.p)} <span>@${s.cr}</span></div>
+    <h3>${s.t}</h3>
+    <div class="sum">${s.sum}</div>
+    <div class="lab">Key points &middot; 关键要点</div>
+    <ul class="pts">${s.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
+    <div class="lab">User pain points &middot; 用户痛点</div>
+    <div class="chips">${s.pain.map(p=>`<span class="chip pain">${p}</span>`).join('')}</div>
+    <div class="lab">Topic ideas &middot; 可延展选题</div>
+    <div class="chips">${s.topics.map(p=>`<span class="chip topic">${p}</span>`).join('')}</div>
+    <div class="metrics">
+      <span>&#9658; <b>${fmt(s.m.v)}</b> views</span>
+      <span>&#9829; <b>${fmt(s.m.l)}</b></span>
+      <span>&#9733; <b>${fmt(s.m.s)}</b></span>
+      <span>&#8593; <b>${fmt(s.m.sh)}</b></span>
+      <span>&#128172; <b>${fmt(s.m.c)}</b></span>
+    </div>
+    <div class="quote">Top comment: &ldquo;${s.q}&rdquo;</div>
+  </div>`;
+}
+function renderSignals(){document.getElementById('signals').innerHTML=SIGNALS.map(s=>sigHtml(s,s._f)).join('');}
+function renderCreators(){
+  document.getElementById('creators').innerHTML=CREATORS.map(c=>`
+    <div class="crow"><span class="pulse ${c.on?'on':'idle'}"></span>
+      <div><div class="nm">${c.n}</div><div class="mm">${FAC[c.p].n} &middot; ${c.crawl}/day</div></div>
+      <div class="rt">${c.on?'tracking':'paused'}<br>${c.last}</div></div>`).join('');
+}
+let LOG=[
+  {c:'ok',t:'08:14',x:'douyin_daily — 142 ok / 0 failed'},
+  {c:'ok',t:'08:02',x:'bilibili_daily — 98 ok / 1 failed'},
+  {c:'',t:'07:30',x:'transcribe_queue — 36 videos processed'},
+  {c:'',t:'06:00',x:'metrics_snapshot — 6 creators updated'},
+];
+function renderLog(){document.getElementById('log').innerHTML=LOG.map(l=>`<div><span class="t">[${l.t}]</span> <span class="${l.c}">${l.x}</span></div>`).join('');}
+function renderComments(){
+  document.getElementById('comments').innerHTML=COMMENTS.map(c=>`
+    <div style="border:1.5px solid var(--line);border-radius:9px;padding:11px">
+      <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px">
+        <span style="font-size:11px;font-weight:700;color:var(--mut)">${c.u}</span>
+        <span style="font-size:9.5px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;border:1.3px solid ${TAGC[c.tag]};color:${TAGC[c.tag]}">${TAGN[c.tag]}</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--ink2)">${c.t}</div>
+    </div>`).join('');
+}
+
+/* animated counters */
+function bump(id,to,suffix){const el=document.getElementById(id);const from=parseFloat((el.dataset.v||el.textContent).replace(/[^0-9.]/g,''))||0;const t0=performance.now();el.dataset.v=to;
+  (function fr(t){const k=Math.min(1,(t-t0)/700);const e=1-Math.pow(1-k,3);const cur=from+(to-from)*e;
+    el.textContent=(to>=1000?fmt(Math.round(cur)):Math.round(cur))+(suffix||'');if(k<1)requestAnimationFrame(fr);})(performance.now());}
+
+/* run scan simulation */
+const steps=[...document.querySelectorAll('.step')];
+const msgs=['Crawling Douyin & Bilibili…','Transcribing new videos…','Summarizing into briefs…','Snapshotting metrics…','Mining comments…','Surfacing topic signals…'];
+let running=false;
+function runScan(){
+  if(running)return;running=true;
+  const btn=document.getElementById('run'),dot=document.getElementById('dot'),st=document.getElementById('status');
+  btn.disabled=true;dot.classList.add('run');
+  steps.forEach(s=>s.classList.remove('active','done'));
+  let i=0;
+  const iv=setInterval(()=>{
+    if(i>0)steps[i-1].classList.add('done');
+    if(i<steps.length){steps[i].classList.add('active');st.innerHTML='<b>Scanning…</b> '+msgs[i];i++;}
+    else{
+      clearInterval(iv);steps.forEach(s=>{s.classList.remove('active');s.classList.add('done')});
+      // results
+      const add=POOL[Math.floor(Math.random()*POOL.length)];
+      SIGNALS.forEach(s=>s._f=false);
+      SIGNALS.unshift({...add,_f:true});if(SIGNALS.length>6)SIGNALS.pop();
+      renderSignals();
+      const now=new Date();const hh=('0'+now.getHours()).slice(-2),mm=('0'+now.getMinutes()).slice(-2);
+      LOG.unshift({c:'ok',t:hh+':'+mm,x:'manual_scan — '+(120+Math.floor(Math.random()*90))+' ok / 0 failed'});LOG=LOG.slice(0,6);renderLog();
+      bump('s-signals',(parseInt(document.getElementById('s-signals').dataset.v||24))+1);
+      bump('s-comments',3100+Math.floor(Math.random()*400)+200);document.getElementById('s-comments').dataset.v=3300;
+      bump('s-topics',(parseInt(document.getElementById('s-topics').dataset.v||17))+3);
+      st.innerHTML='<b>Done.</b> 1 new signal &middot; metrics refreshed &middot; comments re-mined.';
+      dot.classList.remove('run');btn.disabled=false;running=false;
+    }
+  },520);
+}
+document.getElementById('run').addEventListener('click',runScan);
+document.getElementById('s-signals').dataset.v=24;document.getElementById('s-topics').dataset.v=17;document.getElementById('s-comments').dataset.v=3100;
+renderSignals();renderCreators();renderLog();renderComments();
+</script>
+</body>
+</html>

@@ -132,7 +132,7 @@
   @media(max-width:680px){.write{grid-template-columns:1fr;gap:6px}.write .src{display:none}}
 
   /* two-up cards (fiction + channel) */
-  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .twoup{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
   .feat{border:2px solid var(--ink);border-radius:14px;padding:26px;display:flex;flex-direction:column;background:var(--paper);transition:.15s}
   .feat:hover{box-shadow:7px 7px 0 var(--lime)}
   .feat .tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700}
@@ -194,8 +194,6 @@
         <div class="socials">
           <a class="soc" href="https://www.linkedin.com/in/valerio-li-08561043/" target="_blank" rel="noopener" title="LinkedIn">in</a>
           <a class="soc" href="https://x.com/Valerioli86" target="_blank" rel="noopener" title="X / Twitter">X</a>
-          <a class="soc" href="https://www.youtube.com/@rio-english" target="_blank" rel="noopener" title="YouTube">YT</a>
-          <a class="soc" href="https://paragraph.com/@0xvava" target="_blank" rel="noopener" title="Sci-fi on Paragraph">&#9998;</a>
           <a class="soc" href="mailto:valerio.li.ynap@gmail.com" title="Email">@</a>
         </div>
       </div>
@@ -237,7 +235,7 @@
 
     <div class="work reveal">
       <div class="meta"><div class="yr">2024 — 2025</div><div class="tg">WEB3 · PAY-FI · CRISIS COMMS</div></div>
-      <div><div class="ttl">Infini</div><div class="role2">Chief Marketing Officer</div><div class="ds">Built and scaled a Web3 Pay-Fi brand from <b>zero to 50,000+ users</b> across APAC &amp; LATAM. Created the global <b>"Pay-Fi" narrative</b> across English, Mandarin &amp; Spanish, and led <b>crisis comms for a $50M breach</b> — coordinating disclosures and third-party verification to 90% fund recovery and restored trust.</div><div class="press">FEATURED IN: CoinDesk · Cointelegraph · BlockBeats · Odaily · TechFlow · Foresight · PANews</div></div>
+      <div><div class="ttl">Infini</div><div class="role2">Chief Marketing Officer</div><div class="ds">Built and scaled a Web3 Pay-Fi brand from <b>zero to 50,000+ users</b> across APAC &amp; LATAM. Created the global <b>"Pay-Fi" narrative</b> across English, Mandarin &amp; Spanish, and led <b>crisis comms for a $50M breach</b> — coordinating disclosures and third-party verification to 90% fund recovery and restored trust. Brand spans Infini Virtual Accounts, the Pro Card (USD &amp; HKD), and a <b>stablecoin-native Financial OS</b> for cross-border SMBs and global teams.</div><div class="press">FEATURED IN: CoinDesk · Cointelegraph · BlockBeats · Odaily · TechFlow · Foresight · PANews</div></div>
       <a class="go" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">DETAILS &#8599;</a>
     </div>
 
@@ -279,14 +277,14 @@
   <section class="blk" id="field">
     <div class="sectitle reveal" style="margin-bottom:24px">In the Field</div>
     <div class="gallery">
-      <div class="gphoto reveal"><img src="g1.jpg" alt="On stage" loading="lazy"><div class="cap">On Stage</div></div>
-      <div class="gphoto reveal"><img src="g2.jpg" alt="YOOX NET-A-PORTER" loading="lazy"><div class="cap">YOOX NET-A-PORTER</div></div>
-      <div class="gphoto reveal"><img src="g3.jpg" alt="LVMH Loewe" loading="lazy"><div class="cap">LVMH · Loewe</div></div>
-      <div class="gphoto reveal"><img src="g4.jpg" alt="Lafite LE DIX" loading="lazy"><div class="cap">Lafite · LE DIX</div></div>
-      <div class="gphoto reveal"><img src="g5.jpg" alt="Italy at CIIE Shanghai" loading="lazy"><div class="cap">Italy @ CIIE Shanghai</div></div>
-      <div class="gphoto reveal"><img src="g6.jpg" alt="World AI Conference" loading="lazy"><div class="cap">World AI Conference</div></div>
-      <div class="gphoto reveal"><img src="g7.jpg" alt="NET-A-PORTER event" loading="lazy"><div class="cap">NET-A-PORTER Event</div></div>
-      <div class="gphoto reveal"><img src="g8.jpg" alt="Bordeaux estate" loading="lazy"><div class="cap">Bordeaux Estate</div></div>
+      <div class="gphoto reveal"><img src="g1.jpg" alt="Valerio Li hosting a royal visit at YOOX NET-A-PORTER" loading="lazy"><div class="cap">Royal Visit · YNAP</div></div>
+      <div class="gphoto reveal"><img src="g2.jpg" alt="Valerio Li keynote on stage" loading="lazy"><div class="cap">On Stage</div></div>
+      <div class="gphoto reveal"><img src="g3.jpg" alt="Valerio Li at a NET-A-PORTER event" loading="lazy"><div class="cap">NET-A-PORTER Event</div></div>
+      <div class="gphoto reveal"><img src="g4.jpg" alt="Valerio Li on the ground at YOOX" loading="lazy"><div class="cap">On the Ground</div></div>
+      <div class="gphoto reveal"><img src="g5.jpg" alt="LVMH Loewe" loading="lazy"><div class="cap">LVMH · Loewe</div></div>
+      <div class="gphoto reveal"><img src="g6.jpg" alt="YOOX NET-A-PORTER" loading="lazy"><div class="cap">YOOX NET-A-PORTER</div></div>
+      <div class="gphoto reveal"><img src="g7.jpg" alt="World AI Conference" loading="lazy"><div class="cap">World AI Conference</div></div>
+      <div class="gphoto reveal"><img src="g8.jpg" alt="Infini Pay-Fi" loading="lazy"><div class="cap">INFINI · Pay-Fi</div></div>
     </div>
   </section>
 </div>
@@ -334,7 +332,7 @@
   <section class="blk" id="writings">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:12px">
       <div class="sectitle reveal">Writings</div>
-      <a class="go reveal" style="border:2px solid var(--ink);padding:9px 14px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:1px" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">VIEW ALL &#8599;</a>
+      <a class="go reveal" style="border:2px solid var(--ink);padding:9px 14px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:1px" href="writings.html">VIEW ALL &#8599;</a>
     </div>
 
     <a class="write reveal" href="https://www.linkedin.com/in/valerio-li-08561043/recent-activity/all/" target="_blank" rel="noopener">
@@ -392,6 +390,13 @@
         <p>Learn English with AI. A channel teaching English through <b class="mk">AIGC video</b> — making language learning interactive, visual, and powered by generative AI.</p>
         <p style="color:var(--mut);font-size:13px">On-brand with AInfinity's mission: turning AI into something everyone can learn from.</p>
         <a class="cta" href="https://www.youtube.com/@rio-english" target="_blank" rel="noopener">Watch on YouTube &#8599;</a>
+      </div>
+      <div class="feat reveal">
+        <div class="tag">X &middot; In Real Time</div>
+        <h3>@Valerioli86</h3>
+        <p>Live notes from the frontier — <b class="mk">stablecoins &amp; Pay-Fi</b>, Agent AI, market structure, and the building of Infini and AInfinity.</p>
+        <p style="color:var(--mut);font-size:13px">Where the work-in-progress and the hot takes land first.</p>
+        <a class="cta" href="https://x.com/Valerioli86" target="_blank" rel="noopener">Follow on X &#8599;</a>
       </div>
     </div>
   </section>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Valerio Li — Writings</title>
-<meta name="description" content="The full archive of Valerio Li's writing — Web3 & markets articles for Infini and Reva Capital, plus speculative fiction as 0xVava.">
+<meta name="description" content="The full archive of Valerio Li's writing — Infini View & Global thought leadership on Web3, payments & markets, Reva Capital articles, and speculative fiction as 0xVava.">
 <link rel="icon" href="headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,22 +31,26 @@
   .kick{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;display:flex;gap:14px;align-items:center;margin-bottom:22px}
   .kick::before{content:"";width:42px;height:2px;background:var(--red)}
   h1{font-family:var(--serif);font-weight:900;font-size:clamp(48px,11vw,120px);line-height:.86;letter-spacing:-.03em}
-  .lede{margin-top:24px;max-width:700px;color:var(--ink2);font-size:clamp(15px,1.7vw,17px);border-left:5px solid var(--lime);padding-left:20px}
+  .lede{margin-top:24px;max-width:720px;color:var(--ink2);font-size:clamp(15px,1.7vw,17px);border-left:5px solid var(--lime);padding-left:20px}
   .lede em{font-style:italic;color:var(--ink)}
 
-  .grouphead{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4vw,44px);letter-spacing:-.02em;margin:54px 0 6px}
+  .grouphead{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4vw,44px);letter-spacing:-.02em;margin:54px 0 4px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .grouphead .cnt{font-family:var(--mono);font-size:13px;color:var(--mut);font-weight:400}
   .groupsub{font-size:12px;letter-spacing:1px;color:var(--mut);text-transform:uppercase;margin-bottom:10px}
 
-  .row{display:grid;grid-template-columns:140px 1fr auto;gap:20px;align-items:center;padding:18px 0;border-top:1px solid var(--line);transition:.15s}
+  .row{display:grid;grid-template-columns:150px 1fr auto;gap:20px;align-items:center;padding:16px 0;border-top:1px solid var(--line);transition:.15s}
   .row:first-of-type{border-top:2px solid var(--ink)}
   .row:last-of-type{border-bottom:2px solid var(--ink)}
   .row:hover{background:rgba(205,242,74,.18)}
-  .row .src{font-size:11px;letter-spacing:1px;color:var(--mut);font-weight:700}
-  .row .src b{display:block;color:var(--red);margin-bottom:3px}
-  .row .ti{font-family:var(--serif);font-weight:700;font-size:clamp(17px,2.2vw,24px);line-height:1.15}
-  .row .ti small{font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.5px;display:block;margin-top:5px;font-weight:400}
-  .row .go{font-size:16px}
-  @media(max-width:620px){.row{grid-template-columns:1fr;gap:5px}.row .go{display:none}}
+  .row .src{font-size:11px;letter-spacing:.5px;color:var(--mut);font-weight:700}
+  .row .src b{display:block;color:var(--red);margin-bottom:3px;letter-spacing:1px}
+  .row .ti{font-family:var(--serif);font-weight:700;font-size:clamp(16px,2vw,21px);line-height:1.16}
+  .row .go{font-size:16px;color:var(--mut)}
+  .row:hover .go{color:var(--ink)}
+  @media(max-width:640px){.row{grid-template-columns:1fr;gap:5px}.row .go{display:none}}
+
+  .allbtn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:2px solid var(--ink);padding:9px 15px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:1px}
+  .allbtn:hover{background:var(--lime)}
 
   footer{border-top:2px solid var(--ink);margin-top:70px;padding:50px 0 40px;font-size:12px;letter-spacing:1px;color:var(--mut);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
   footer a:hover{color:var(--ink)}
@@ -64,65 +68,73 @@
   <section class="head">
     <div class="kick">Writings &middot; The Full Archive</div>
     <h1>Writings</h1>
-    <div class="lede">Two bodies of work: <b>articles on Web3, payments &amp; markets</b> written for Infini and Reva Capital — and <b>speculative fiction</b> published as 0xVava. <em>"Decentralization will destroy the world. Then a brand new magic world is reborn."</em></div>
+    <div class="lede">Thought leadership on <b>Web3, payments &amp; markets</b> — the Infini View &amp; Infini Global series, plus Reva Capital pieces — and <b>speculative fiction</b> published as 0xVava. <em>"Decentralization will destroy the world. Then a brand new magic world is reborn."</em></div>
   </section>
 
+  <!-- INFINI VIEW -->
   <section>
-    <div class="grouphead">Articles</div>
-    <div class="groupsub">Web3 · Payments · Markets &mdash; Infini &amp; Reva Capital</div>
+    <div class="grouphead">Infini View<span class="cnt">Perspectives · 11</span></div>
+    <div class="groupsub">Strategy &amp; opinion on stablecoins, payments &amp; the on-chain economy</div>
 
-    <a class="row" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
-      <div class="src"><b>INFINI</b>2025</div>
-      <div class="ti">Compliant Privacy: The Key to Next-Generation Crypto Payment Networks<small>Why ZKPs and FHE let payments be private and regulated at once</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
-      <div class="src"><b>INFINI</b>2024</div>
-      <div class="ti">Stablecoin Cross-Border Payments: SWIFT vs. Blockchain — How Infini Fits In<small>On-chain settlement against legacy correspondent-banking rails</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
-      <div class="src"><b>INFINI</b>2024</div>
-      <div class="ti">Why Enterprises Must Pay Attention to Stablecoin Payments<small>From niche crypto rail to cornerstone of global financial infrastructure</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://www.linkedin.com/company/infinimoney/" target="_blank" rel="noopener">
-      <div class="src"><b>INFINI</b>2025</div>
-      <div class="ti">A Guide to Infini Enterprise Cards<small>Making every order more profitable for AI proxy &amp; relay startups</small></div><div class="go">&#8599;</div></a>
-
-    <a class="row" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener">
-      <div class="src"><b>REVA CAPITAL</b>2025</div>
-      <div class="ti">Money at Formula 1 Speed: Stablecoins and the Future of Finance<small>Stablecoin velocity vs. M2 — capital productivity, on-chain</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener">
-      <div class="src"><b>REVA CAPITAL</b>2025</div>
-      <div class="ti">How Citadel's Options Expansion Could Change the Rules of Trading<small>Not just market share — a shift in market structure</small></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-2025-imperative-stablecoin-payment-acquiring-and-the-rise" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">The 2025 Imperative: Stablecoin Payment Acquiring &amp; the Rise of Pay-Fi</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-paradigm-shift-of-payment-giants-a-deep-dive-into-visa" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">The Paradigm Shift of Payment Giants: A Deep Dive into Visa &amp; Mastercard's Stablecoin Strategy</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-decisive-variable-for-next-generation-payment-networks" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">Compliant Privacy: The Key to Next-Generation Crypto Payment Networks</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-powell-effect-how-spot-etfs-pulled-crypto-into-the-macro" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">The Powell Effect: How Spot ETFs Pulled Crypto into the Macro Arena</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-genesis-coupling-of-ai-and-crypto" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">The Genesis Coupling of AI and Crypto</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-opportunities-and-challenges-of-integrating-crypto-and" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">Integrating Crypto and Private Equity into U.S. 401(k) Portfolios: Opportunities &amp; Challenges</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-the-evolving-role-of-the-next-gen-cfo-from-controller-to" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">The Evolving Role of the Next-Gen CFO: From Controller to Strategic Growth Engine</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-on-chain-payments-and-interest-bearing-stablecoins-balancing" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">On-Chain Payments and Interest-Bearing Stablecoins: Balancing Innovation and Compliance</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-why-enterprises-must-pay-attention-to-stablecoin-payments" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">Why Enterprises Must Pay Attention to Stablecoin Payments</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/why-scale-matters-building-enterprise-crypto-finance-for-the-stablecoin-era" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">Why SCALE Matters: Building Enterprise Crypto Finance for the Stablecoin Era</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/from-wild-west-to-regulated-era-unpacking-americas-stable-act" target="_blank" rel="noopener"><div class="src"><b>INFINI VIEW</b>2025</div><div class="ti">From Wild West to Regulated Era: Unpacking America's STABLE Act</div><div class="go">&#8599;</div></a>
   </section>
 
+  <!-- INFINI GLOBAL -->
   <section>
-    <div class="grouphead">Fiction</div>
-    <div class="groupsub">Speculative &amp; literary short stories &mdash; as 0xVava (originally in Chinese)</div>
+    <div class="grouphead">Infini Global<span class="cnt">Global &amp; Markets · 9</span></div>
+    <div class="groupsub">Regulation, regional markets &amp; the stablecoin ecosystem</div>
 
-    <a class="row" href="https://paragraph.com/@0xvava/poinciana" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Poinciana<small>A rain-soaked Shanghai villa, a flame tree, and an unexpected visitor</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/conjungation" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Conjugation<small>A CEO, his COO, and a 200%-premium acquisition offer</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/enigma" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Enigma<small>Memory, fate, and a girl who recalls only three years of her past</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/implicator" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Implicator<small>2112 — CERN goes dark, and three red words appear: Cogito ergo sum</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/millenium" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Millennium<small>Born at the close of 1982 — a name, a fate, and a private faith</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/insomnia" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Insomnia<small>Ten years in Shanghai, an izakaya, and a quiet decision to let go</small></div><div class="go">&#8599;</div></a>
-    <a class="row" href="https://paragraph.com/@0xvava/deja-vu" target="_blank" rel="noopener">
-      <div class="src"><b>0xVAVA</b>FEB</div>
-      <div class="ti">Déjà Vu<small>An autumn café, a reunion, and a face both familiar and strange</small></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-business-beta-launch-a-new-stablecoin-finance-os-for-global-smes-and" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2026</div><div class="ti">INFINI Business Beta Launch: A New Stablecoin Finance OS for Global SMEs and Founders</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-global-or-global-payments-and-stablecoin-ecosystem-2026-strategic" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2026</div><div class="ti">Global Payments &amp; Stablecoin Ecosystem 2026: Strategic Outlook &amp; Key Findings</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-global-or-usdes-60-minute-panic-a-billion-dollar-perfect-storm-who" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">USDe's 60-Minute Panic: A Billion-Dollar Perfect Storm — Who Pays the Price?</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/intent-dawn-a-new-economy-for-ai-agents-in-web3" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">Intent Dawn: A New Economy for AI Agents in Web3</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-global-or-state-market-and-rulebook-the-global-race-for-digital" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">State, Market, and Rulebook: The Global Race for Digital Finance Supremacy</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-view-or-navigating-malaysias-web3-landscape-stablecoin-licensing-and" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">Navigating Malaysia's Web3 Landscape: Stablecoin Licensing &amp; Cross-Border Payment Compliance</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-global-or-navigating-the-naira-crisis-how-dollar-backed-stablecoins" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">Navigating the Naira Crisis: How Dollar-Backed Stablecoins Offer Nigerians a Safe Haven</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/global-infini-east-asias-crypto-hub-race-hong-kong-vs-singapore-vs-south" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">East Asia's Crypto Hub Race: Hong Kong vs. Singapore vs. South Korea</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.infini.money/blog/infini-analyst-singapores-stablecoin-framework-legalizing-multi-currency" target="_blank" rel="noopener"><div class="src"><b>INFINI GLOBAL</b>2025</div><div class="ti">Singapore's Stablecoin Framework: Legalizing Multi-Currency Pegs</div><div class="go">&#8599;</div></a>
+
+    <a class="allbtn" href="https://www.infini.money/blog" target="_blank" rel="noopener">ALL ON THE INFINI BLOG &#8599;</a>
+  </section>
+
+  <!-- REVA -->
+  <section>
+    <div class="grouphead">Reva Capital<span class="cnt">Markets · 2</span></div>
+    <div class="groupsub">Market structure &amp; the future of finance</div>
+
+    <a class="row" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener"><div class="src"><b>REVA CAPITAL</b>2025</div><div class="ti">Money at Formula 1 Speed: Stablecoins and the Future of Finance</div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://www.linkedin.com/company/reva-capital/" target="_blank" rel="noopener"><div class="src"><b>REVA CAPITAL</b>2025</div><div class="ti">How Citadel's Options Expansion Could Change the Rules of Trading</div><div class="go">&#8599;</div></a>
+  </section>
+
+  <!-- FICTION -->
+  <section>
+    <div class="grouphead">Fiction<span class="cnt">as 0xVava · originally in Chinese</span></div>
+    <div class="groupsub">Speculative &amp; literary short stories</div>
+
+    <a class="row" href="https://paragraph.com/@0xvava/poinciana" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Poinciana<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">A rain-soaked Shanghai villa, a flame tree, and an unexpected visitor</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/conjungation" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Conjugation<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">A CEO, his COO, and a 200%-premium acquisition offer</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/enigma" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Enigma<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">Memory, fate, and a girl who recalls only three years of her past</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/implicator" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Implicator<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">2112 — CERN goes dark, and three red words appear: Cogito ergo sum</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/millenium" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Millennium<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">Born at the close of 1982 — a name, a fate, and a private faith</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/insomnia" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Insomnia<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">Ten years in Shanghai, an izakaya, and a quiet decision to let go</span></div><div class="go">&#8599;</div></a>
+    <a class="row" href="https://paragraph.com/@0xvava/deja-vu" target="_blank" rel="noopener"><div class="src"><b>0xVAVA</b>FEB</div><div class="ti">Déjà Vu<span style="display:block;font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:4px;font-weight:400">An autumn café, a reunion, and a face both familiar and strange</span></div><div class="go">&#8599;</div></a>
   </section>
 
   <footer>
     <span>&copy; 2026 Valerio Li &middot; Every Interaction Makes You Grow</span>
     <span>
-      <a href="https://paragraph.com/@0xvava" target="_blank" rel="noopener">ALL FICTION ON PARAGRAPH &#8599;</a> &nbsp;/&nbsp;
+      <a href="https://www.infini.money/blog" target="_blank" rel="noopener">INFINI BLOG &#8599;</a> &nbsp;/&nbsp;
+      <a href="https://paragraph.com/@0xvava" target="_blank" rel="noopener">PARAGRAPH &#8599;</a> &nbsp;/&nbsp;
       <a href="index.html">HOME</a>
     </span>
   </footer>

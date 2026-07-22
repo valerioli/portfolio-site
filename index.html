@@ -94,9 +94,9 @@
 
   /* gallery */
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .gphoto{position:relative;aspect-ratio:1;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--ink)}
+  .gphoto{position:relative;aspect-ratio:4/3;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--ink)}
   .gphoto img,.gphoto video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .gphoto img{opacity:0;transition:opacity 1.1s ease, transform .6s ease}
+  .gphoto img{opacity:0;object-fit:contain;transition:opacity 1.1s ease, transform .6s ease}
   .gphoto img.on{opacity:1}
   .gphoto.vid video{opacity:1}
   .gphoto:hover img.on{transform:scale(1.045)}
@@ -298,8 +298,11 @@
         <div class="cap">INFINI · Pay-Fi</div>
         <div class="hint">&#9658; Hover</div>
       </div>
-      <div class="gphoto reveal">
-        <img src="lvmh1.jpg" class="on" alt="LVMH Fashion Group annual gala, Shanghai" loading="lazy">
+      <div class="gphoto rotate reveal">
+        <img src="lvmh4.jpg" class="on" alt="LVMH Fashion Group 'United with Love, Shine with Pride' stage — Annual Dinner 2021" loading="lazy">
+        <img src="lvmh1.jpg" alt="LVMH Fashion Group annual gala, Shanghai" loading="lazy">
+        <img src="lvmh5.jpg" alt="LVMH Fashion Group Annual Dinner 2021 signature cocktails" loading="lazy">
+        <img src="lvmh6.jpg" alt="Valerio Li with colleagues at the LVMH Fashion Group Annual Dinner 2021" loading="lazy">
         <div class="cap">LVMH Fashion Group</div>
       </div>
       <div class="gphoto rotate reveal">

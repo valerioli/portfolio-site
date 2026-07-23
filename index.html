@@ -96,7 +96,7 @@
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .gphoto{position:relative;aspect-ratio:4/3;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--ink)}
   .gphoto img,.gphoto video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .gphoto img{opacity:0;object-fit:contain;transition:opacity 1.1s ease, transform .6s ease}
+  .gphoto img{opacity:0;object-fit:cover;transition:opacity 1.1s ease, transform .6s ease}
   .gphoto img.on{opacity:1}
   .gphoto.vid video{opacity:1}
   .gphoto:hover img.on{transform:scale(1.045)}
@@ -498,6 +498,8 @@
     if(e.isIntersecting){e.target.style.transition='opacity .7s ease, transform .7s ease';e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target);}
   });},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // safety net: guarantee everything is visible even if the observer misses
+  setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none';});},1600);
 
   // auto-rotate photo groups (staggered) — only tiles with 2+ images rotate
   document.querySelectorAll('.gphoto.rotate').forEach((tile,ti)=>{
